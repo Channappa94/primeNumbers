@@ -4,7 +4,7 @@
 //
 //  Created by IMCS2 on 7/12/19.
 //  Copyright © 2019 com.phani. All rights reserved.
-//
+//**Cheking of the number is Prime or not**
 
 import UIKit
 
@@ -17,38 +17,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
    
     }
-    
-    
-    
     @IBAction func myButton(_ sender: Any) {
+        //Getting value from the
         let number = myNumber.text
-        let num = Int(number!)!
-        let x = num
-        if(x==2){
-            myOutput.text = "prime"
-
+        let num = Int(number!)!//Converting string to Int
+        var count = 0
+        for n in 1...num{//Creatig a for loop from 1 till number.
+            if(num % n == 0){//Checking if the number is divisible and remainder is 0
+                count += 1
+            }
         }
-
-        for n in 2...num{
-            if (num % n == 0) || (num == 9){
-
-                myOutput.text = "not prime"
-                break
-            
-            }else{
-                
-                myOutput.text = "prime"
-                break
-                }
-            
-        
-        
-        
+        if (count == 2){//if the count is equal to 2 then we say that it is prime number
+            myOutput.text = "number is prime"
+        }else {
+            myOutput.text = "number is not prime"
         }
-    
-    
-    
     }
 
-
 }
+
